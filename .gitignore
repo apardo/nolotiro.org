@@ -48,3 +48,6 @@ log/localeapp.yml
 
 # For Rubymine (Jetbrains IDE)
 .idea
+
+# For bower packages
+vendor/assets/bower_components/
