@@ -637,7 +637,7 @@ form.searchbox
   display: inline-block
   padding: 10px
   padding-left: 24px
-  width: 468px
+  width: 100%
 
 .home_location_change
   form
@@ -652,6 +652,7 @@ dl, dd
   margin: 0px !important
 
 .ad_excerpt_home
+  font-size: 1.2em
   float: left
   padding-top: 14px
   padding-bottom: 10px
@@ -722,7 +723,8 @@ dl, dd
  * Header Area.
 
 .site-logo
-  margin-left: 60px
+  margin-left: 50px
+  padding-left: 0px
 
 .site-name
   z-index: -130
@@ -738,7 +740,7 @@ dl, dd
   img
     position: absolute
     top: 16px
-    left: 0
+    left: 10px
 
 .site-slogan
   float: left
@@ -1068,7 +1070,7 @@ $langs: <%= Rails.application.secrets["langs"] %>
 @media only screen and (max-width: 779px)
   .section_ads
     padding: 0px
-    width: 95%
+    width: 100%
     padding-left: 4%
 
   .site-name

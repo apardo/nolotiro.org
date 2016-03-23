@@ -74,35 +74,49 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-    <div class="container">
+    <div class="container-fluid">
 
-      <div id="header">
+      <div class="row" id="my-header">
 
-        <% cache("select_language_box_#{I18n.locale}_#{request.original_url}") do %>
-          <%= render :partial => "partials/select_language_box" %>
-        <% end %>
+        <div class="col-md-4">
 
-        <%= render :partial => "partials/user_actions" %>
+          <div class="site-logo">
+            <div class="site-name">
+              <%= link_to root_path, :title => "nolotiro.org home", "data-no-turbolink" => true do %>
+                <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
+                nolotiro.org
+                <%=h yield(:title) %>
+              <% end %>
+            </div>
 
-        <div class="site-logo">
-          <div class="site-name">
-            <%= link_to root_path, :title => "nolotiro.org home", "data-no-turbolink" => true do %>
-              <%= image_tag "nolotiro_logo.png", :alt => "nolotiro.org", :id => "logo" %>
-              nolotiro.org
-              <%=h yield(:title) %>
-            <% end %>
+            <div class="site-slogan">
+              <%= t('nlt.slogan') %>
+            </div>
           </div>
 
-          <div class="site-slogan">
-            <%= t('nlt.slogan') %>
-          </div>
         </div>
 
-        <% if content_for?(:action) %>
-          <%= yield(:action) %>
-        <% end %>
+        <div class="col-md-3">
+          <!--
+                  <% if content_for?(:action) %>
+                    <%= yield(:action) %>
+                  <% end %>
+                -->
+        </div>
+
+        <div class="col-md-5">
+
+          <% cache("select_language_box_#{I18n.locale}_#{request.original_url}") do %>
+            <%= render :partial => "partials/select_language_box" %>
+          <% end %>
+
+          <%= render :partial => "partials/user_actions" %>
+
+        </div>
 
       </div>
+
+
 
       <div class="desktop">
         <%= render partial: "partials/google_adsense", locals: { class_name: "google_adsense_728_90", ad_slot: "9326281262"}  %>
