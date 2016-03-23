@@ -12,6 +12,7 @@ gem 'jquery-rails'
 #gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'rb-readline', '~> 0.5.0', :require => false
+gem 'bower-rails'   # Rails-like bower use
 
 group :doc do
   gem 'sdoc', require: false
